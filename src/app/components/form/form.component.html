@@ -1,0 +1,103 @@
+<h1 class="text-black text-center p-3 fs-1">Form Validation</h1>
+
+<div class="row">
+  <div class="col"></div>
+
+  <div class="col-md-4">
+    <div class="container">
+      <div class="input-group flex-nowrap py-3">
+        <span class="input-group-text" id="addon-wrapping"
+          ><i class="fa fa-user"></i
+        ></span>
+
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="Name"
+          [(ngModel)]="nameRef"
+          aria-describedby="addon-wrapping"
+        />
+      </div>
+      <div class="input-group flex-nowrap py-3">
+        <span class="input-group-text" id="addon-wrapping"
+          ><i class="fa fa-phone"></i
+        ></span>
+
+        <input
+          type="text"
+          class="form-control"
+          id="phoneNumber"
+          placeholder="Phone Number"
+          [(ngModel)]="phoneNumberRef"
+          aria-describedby="addon-wrapping"
+        />
+      </div>
+
+      <div class="input-group flex-nowrap py-3">
+        <span class="input-group-text" id="addon-wrapping"
+          ><i class="fa fa-envelope"></i
+        ></span>
+
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Email-ID"
+          [(ngModel)]="emailRef"
+          aria-describedby="addon-wrapping"
+        />
+      </div>
+
+      <div class="d-grid gap-2 py-1">
+        <button class="btn btn-info" type="submit" (click)="add()">
+          {{ btn }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col"></div>
+</div>
+<!-- <div *ngFor="let form of forms" class="row">
+  <div class="col"></div>
+  <div  class="col my-3">
+    <div class="d-flex">
+      <h4 class="me-3">{{ form.name }}</h4>
+      <h4 class="me-3">{{ form.phoneNumber }}</h4>
+      <h4 class="me-3">{{ form.email }}</h4>
+      <button class="btn btn-primary me-3" (click)="edit(form.id)">Edit</button>
+      <button class="btn btn-danger me-3" (click)="delete(form.id)">
+        Delete
+      </button>
+    </div>
+  </div>
+  <div class="col"></div>
+</div> --> 
+
+<div class="container">
+    <table class="container-fluid table caption-top mx-5 my-5">
+      
+
+      <thead>
+        <tr class="text-center">
+          
+          <th scope="col">Name</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">E-mail ID</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let form of forms">
+          <td>{{form.name | uppercase}}</td>
+          <td>{{form.phoneNumber}}</td>
+          <td>{{form.email}}</td>
+          <td>
+            <button class="btn btn-primary me-3" (click)="edit(form.id)" >Edit</button>
+            <button class="btn btn-danger" (click)="delete(form.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
